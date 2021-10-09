@@ -28,7 +28,7 @@ namespace Pride_.Controllers
             return await _context.professionals.ToListAsync();
         }
 
-        // GET: api/Professionals/5
+        // GET: api/Professionals/jessica@gmail.com
         [HttpGet("{id}")]
         public async Task<ActionResult<Professional>> GetProfessional(string id)
         {
@@ -112,6 +112,21 @@ namespace Pride_.Controllers
 
             _context.professionals.Remove(professional);
             await _context.SaveChangesAsync();
+
+            return professional;
+        }
+
+        // GET: api/Professionals/Medico/Ginecologista
+        [HttpGet("{category}/{speciality}")]
+        public async Task<IEnumerable<Professional>> GetProfessionalByCategoryBySpeciality(string category, string speciality)
+        {
+            var professional = await _context.professionals
+                .Where(x => x.ProfessionalType.Category == category && x.ProfessionalType.Speciality == speciality)
+                .ToListAsync();
+            if (professional == null)
+            {
+                return null;     
+            }
 
             return professional;
         }

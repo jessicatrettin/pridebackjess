@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Pride_;
@@ -9,9 +10,10 @@ using Pride_;
 namespace Pride_.Migrations
 {
     [DbContext(typeof(PrideMoreContext))]
-    partial class PrideMoreContextModelSnapshot : ModelSnapshot
+    [Migration("20211008001701_professionals")]
+    partial class professionals
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -26,10 +28,10 @@ namespace Pride_.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<string>("Category")
+                    b.Property<string>("Categoria")
                         .HasColumnType("text");
 
-                    b.Property<string>("Speciality")
+                    b.Property<string>("Especialidade")
                         .HasColumnType("text");
 
                     b.HasKey("Id");
