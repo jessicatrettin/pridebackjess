@@ -14,6 +14,8 @@ namespace Pride_.Domain
         public virtual ProfessionalType ProfessionalType { get; set; }
         [Required]
         public string Speciality { get; set; }
+        [Required]
+        public string Address { get; set; }
         public string HealthInsurance { get; set; }
     }
 }

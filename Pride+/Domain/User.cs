@@ -16,10 +16,10 @@ namespace Pride_.Domain
         [Required]
         public string CPF { get; set; }
         [Required]
-        public string Address { get; set; }
-        [Required]
         public string Phone { get; set; }
         public string Instagram { get; set; }
+        [Required]
+        public string Password { get; set; }
 
     }
 }

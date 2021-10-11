@@ -14,5 +14,7 @@ namespace Pride_
         {
 
         }
+        //public DbSet<ProfessionalType> ProfessionalTypes { get; set; }
+        public DbSet<Pride_.Domain.Contact> Contact { get; set; }
     }
 }
